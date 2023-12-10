@@ -14,7 +14,6 @@ public class ujianmingguan3 {
         String path = "C:\\MyTools\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", path);
         WebDriver driver = new ChromeDriver();
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         String URL = "https://shop.demoqa.com/";
@@ -86,8 +85,7 @@ public class ujianmingguan3 {
         assertEquals(getTxtSizeProduct, "SIZE");
 
         //Plus Item
-        WebElement txtPlusItem = driver.findElement(By.xpath("//i[@class='icon_plus']"));
-        String getTxtPlusItem = txtPlusItem.getText();
+
         WebElement plusItem = driver.findElement(By.xpath("//i[@class='icon_plus']"));
         System.out.println("+ Item Clicked");
         plusItem.click();
@@ -139,9 +137,9 @@ public class ujianmingguan3 {
 
     public static void assertEquals (String actualText, String expectedText) {
         if (actualText.equals(expectedText)) {
-            System.out.println("Passes");
+            System.out.println("Passed");
         } else {
-            System.out.println("Invalid");
+            System.out.println("Failed");
         }
     }
     public static void scrollIntoView(WebDriver driver, WebElement element) {
